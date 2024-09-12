@@ -1,9 +1,98 @@
-[gd_scene load_steps=2 format=3 uid="uid://frj1f8qfogdc"]
+[gd_scene load_steps=12 format=3 uid="uid://frj1f8qfogdc"]
 
-[sub_resource type="TileSet" id="TileSet_moq4n"]
+[ext_resource type="Texture2D" uid="uid://dx3037v5g7j2" path="res://realassets/HUD/PaperPlayerHUD.png" id="1_clf34"]
+[ext_resource type="Texture2D" uid="uid://bgbrh53y5otlo" path="res://Content/3 Progress Bars/1.png" id="2_g6oks"]
+[ext_resource type="Texture2D" uid="uid://cfcirer6a72k6" path="res://Content/3 Progress Bars/2.png" id="3_m0y0m"]
+[ext_resource type="Texture2D" uid="uid://deyvxu5uiknpe" path="res://Content/3 Progress Bars/3.png" id="4_5w21c"]
+[ext_resource type="Texture2D" uid="uid://26j4rljiscre" path="res://Content/3 Progress Bars/4.png" id="5_xspi1"]
+[ext_resource type="Texture2D" uid="uid://tjverr3lgpf8" path="res://Content/3 Progress Bars/5.png" id="6_5axrq"]
+[ext_resource type="Texture2D" uid="uid://dvufaqm0eu7xl" path="res://Content/3 Progress Bars/6.png" id="7_48bd3"]
+[ext_resource type="Texture2D" uid="uid://frjif4sj457h" path="res://Content/5 Holders/23.png" id="8_dgfkl"]
+[ext_resource type="Texture2D" uid="uid://drmx1kp7o11jw" path="res://realassets/HUD/PlayerPortrait.png" id="9_855yu"]
+[ext_resource type="Texture2D" uid="uid://bwcpp401kp6ov" path="res://realassets/HUD/Money.png" id="10_q5q3s"]
+[ext_resource type="Texture2D" uid="uid://cu6djv8ocmocx" path="res://realassets/HUD/Exp.png" id="11_lgdqn"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_moq4n")
-format = 2
+[node name="UImash" type="Node2D" parent="."]
+
+[node name="PaperPlayerHUD" type="Sprite2D" parent="UImash"]
+position = Vector2(558, 276)
+texture = ExtResource("1_clf34")
+
+[node name="progressbars" type="Node2D" parent="UImash"]
+
+[node name="r1" type="Sprite2D" parent="UImash/progressbars"]
+position = Vector2(535, 259)
+texture = ExtResource("2_g6oks")
+
+[node name="r5" type="Sprite2D" parent="UImash/progressbars"]
+position = Vector2(598, 259)
+texture = ExtResource("3_m0y0m")
+
+[node name="r6" type="Sprite2D" parent="UImash/progressbars"]
+position = Vector2(614, 259)
+texture = ExtResource("3_m0y0m")
+
+[node name="r4" type="Sprite2D" parent="UImash/progressbars"]
+position = Vector2(582, 259)
+texture = ExtResource("3_m0y0m")
+
+[node name="r3" type="Sprite2D" parent="UImash/progressbars"]
+position = Vector2(566, 259)
+texture = ExtResource("3_m0y0m")
+
+[node name="r2" type="Sprite2D" parent="UImash/progressbars"]
+position = Vector2(551, 259)
+texture = ExtResource("3_m0y0m")
+
+[node name="r7" type="Sprite2D" parent="UImash/progressbars"]
+position = Vector2(630, 259)
+texture = ExtResource("4_5w21c")
+
+[node name="y1" type="Sprite2D" parent="UImash/progressbars"]
+position = Vector2(532, 276)
+texture = ExtResource("5_xspi1")
+
+[node name="y6" type="Sprite2D" parent="UImash/progressbars"]
+position = Vector2(608, 276)
+texture = ExtResource("6_5axrq")
+
+[node name="y5" type="Sprite2D" parent="UImash/progressbars"]
+position = Vector2(592, 276)
+texture = ExtResource("6_5axrq")
+
+[node name="y4" type="Sprite2D" parent="UImash/progressbars"]
+position = Vector2(576, 276)
+texture = ExtResource("6_5axrq")
+
+[node name="y3" type="Sprite2D" parent="UImash/progressbars"]
+position = Vector2(560, 276)
+texture = ExtResource("6_5axrq")
+
+[node name="y2" type="Sprite2D" parent="UImash/progressbars"]
+position = Vector2(544, 276)
+texture = ExtResource("6_5axrq")
+
+[node name="y7" type="Sprite2D" parent="UImash/progressbars"]
+position = Vector2(624, 276)
+texture = ExtResource("7_48bd3")
+
+[node name="PortraitCircle" type="Sprite2D" parent="."]
+position = Vector2(493, 264)
+texture = ExtResource("8_dgfkl")
+
+[node name="PlayerPortrait" type="Sprite2D" parent="."]
+position = Vector2(493, 267)
+scale = Vector2(0.515625, 0.515625)
+texture = ExtResource("9_855yu")
+
+[node name="Money" type="Sprite2D" parent="."]
+position = Vector2(500, 301)
+scale = Vector2(0.578125, 0.578125)
+texture = ExtResource("10_q5q3s")
+
+[node name="Exp" type="Sprite2D" parent="."]
+position = Vector2(581, 301)
+scale = Vector2(0.463541, 0.463541)
+texture = ExtResource("11_lgdqn")
