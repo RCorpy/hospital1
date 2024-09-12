@@ -1,3 +1,9 @@
-[gd_scene format=3 uid="uid://frj1f8qfogdc"]
+[gd_scene load_steps=2 format=3 uid="uid://frj1f8qfogdc"]
+
+[sub_resource type="TileSet" id="TileSet_moq4n"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_moq4n")
+format = 2
