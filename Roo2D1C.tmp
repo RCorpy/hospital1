@@ -217,4 +217,4 @@ texture = ExtResource("11_lgdqn")
 position = Vector2(493, 265)
 scale = Vector2(0.578125, 0.578125)
 sprite_frames = SubResource("SpriteFrames_ehgl0")
-frame_progress = 0.276213
+frame_progress = 0.307441
