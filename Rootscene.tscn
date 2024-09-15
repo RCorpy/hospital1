@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://frj1f8qfogdc"]
+[gd_scene load_steps=20 format=3 uid="uid://frj1f8qfogdc"]
 
 [ext_resource type="Texture2D" uid="uid://dx3037v5g7j2" path="res://realassets/HUD/PaperPlayerHUD.png" id="1_clf34"]
 [ext_resource type="Script" path="res://UImash.gd" id="1_xcap8"]
@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://bwcpp401kp6ov" path="res://realassets/HUD/Money.png" id="10_q5q3s"]
 [ext_resource type="Texture2D" uid="uid://cu6djv8ocmocx" path="res://realassets/HUD/Exp.png" id="11_lgdqn"]
 [ext_resource type="Texture2D" uid="uid://ccqkqggxhl7hg" path="res://realassets/HUD/PlayerPortrait2.png" id="12_yibxy"]
+[ext_resource type="Theme" uid="uid://bq4435drmapio" path="res://theme.tres" id="14_uotcd"]
+[ext_resource type="FontFile" uid="uid://bc7gkfvj8dops" path="res://Federant-Regular.ttf" id="15_g2uok"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ehgl0"]
 animations = [{
@@ -208,10 +210,30 @@ position = Vector2(500, 301)
 scale = Vector2(0.578125, 0.578125)
 texture = ExtResource("10_q5q3s")
 
+[node name="MoneyLabel" type="Label" parent="UImash"]
+offset_left = 521.0
+offset_top = 294.0
+offset_right = 562.0
+offset_bottom = 312.0
+theme = ExtResource("14_uotcd")
+theme_override_colors/font_color = Color(0.115944, 0.466421, 0.368319, 1)
+theme_override_fonts/font = ExtResource("15_g2uok")
+theme_override_font_sizes/font_size = 13
+text = "19257
+"
+
 [node name="Exp" type="Sprite2D" parent="UImash"]
-position = Vector2(581, 301)
+position = Vector2(590, 302)
 scale = Vector2(0.463541, 0.463541)
 texture = ExtResource("11_lgdqn")
+
+[node name="ExpLabel" type="Label" parent="UImash"]
+offset_left = 613.0
+offset_top = 295.0
+offset_right = 658.0
+offset_bottom = 312.0
+theme = ExtResource("14_uotcd")
+text = "25%"
 
 [node name="PlayerPortrait" type="AnimatedSprite2D" parent="UImash"]
 position = Vector2(493, 265)
