@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsuthhw15f3is"
-path="res://.godot/imported/SettingsPaper.png-7a3530de80aa7f226347490da66fbd36.ctex"
+uid="uid://ckkii7sghd0dh"
+path="res://.godot/imported/redlsidebutton.png-2439fce5c6be507b51fa0845606ed330.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://realassets/SettingsPaper.png"
-dest_files=["res://.godot/imported/SettingsPaper.png-7a3530de80aa7f226347490da66fbd36.ctex"]
+source_file="res://realassets/buttons/redlsidebutton.png"
+dest_files=["res://.godot/imported/redlsidebutton.png-2439fce5c6be507b51fa0845606ed330.ctex"]
 
 [params]
 

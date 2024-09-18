@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsuthhw15f3is"
-path="res://.godot/imported/SettingsPaper.png-7a3530de80aa7f226347490da66fbd36.ctex"
+uid="uid://dirtpl276fk32"
+path="res://.godot/imported/redmidbutton.png-6b92e4a09afb2ab1b4962c67f247a387.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://realassets/SettingsPaper.png"
-dest_files=["res://.godot/imported/SettingsPaper.png-7a3530de80aa7f226347490da66fbd36.ctex"]
+source_file="res://realassets/buttons/redmidbutton.png"
+dest_files=["res://.godot/imported/redmidbutton.png-6b92e4a09afb2ab1b4962c67f247a387.ctex"]
 
 [params]
 

@@ -26,3 +26,7 @@ func updateBar(color, value):
 			%progressbars.get_node(combined_string).visible = true
 		else:
 			%progressbars.get_node(combined_string).visible = false
+
+
+func _on_button_back_pressed():
+	pass # Replace with function body.
