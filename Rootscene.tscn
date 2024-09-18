@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://frj1f8qfogdc"]
+[gd_scene load_steps=27 format=3 uid="uid://frj1f8qfogdc"]
 
 [ext_resource type="Texture2D" uid="uid://dx3037v5g7j2" path="res://realassets/HUD/PaperPlayerHUD.png" id="1_clf34"]
 [ext_resource type="Script" path="res://UImash.gd" id="1_xcap8"]
@@ -18,6 +18,12 @@
 [ext_resource type="Texture2D" uid="uid://ccqkqggxhl7hg" path="res://realassets/HUD/PlayerPortrait2.png" id="12_yibxy"]
 [ext_resource type="Theme" uid="uid://bq4435drmapio" path="res://theme.tres" id="14_uotcd"]
 [ext_resource type="FontFile" uid="uid://bc7gkfvj8dops" path="res://Federant-Regular.ttf" id="15_g2uok"]
+[ext_resource type="Texture2D" uid="uid://bsuthhw15f3is" path="res://realassets/1.png" id="19_uxc8i"]
+[ext_resource type="Texture2D" uid="uid://bsuthhw15f3is" path="res://realassets/dialoguepaper.png" id="20_li0ww"]
+[ext_resource type="Texture2D" uid="uid://bb1klheg85qdx" path="res://realassets/settingsbutton.png" id="20_qbbic"]
+[ext_resource type="Texture2D" uid="uid://dy1ibu4a5rhb5" path="res://realassets/HUD/PortraitCircle.png" id="21_bah4s"]
+[ext_resource type="Texture2D" uid="uid://b6gdijnlgk645" path="res://realassets/portraits/PlayerPortrait.png" id="23_0xxat"]
+[ext_resource type="Texture2D" uid="uid://nwlyy817mhuo" path="res://realassets/portraits/PlayerPortrait2.png" id="24_vqbed"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ehgl0"]
 animations = [{
@@ -33,184 +39,200 @@ animations = [{
 "speed": 1.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_w5uao"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_0xxat")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_vqbed")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
 [node name="Node2D" type="Node2D"]
 
-[node name="UImash" type="Node2D" parent="."]
+[node name="UILeftTop" type="Node2D" parent="."]
+position = Vector2(-610, -307)
+scale = Vector2(1.40481, 1.40481)
 script = ExtResource("1_xcap8")
 
-[node name="PaperPlayerHUD" type="Sprite2D" parent="UImash"]
+[node name="PaperPlayerHUD" type="Sprite2D" parent="UILeftTop"]
 position = Vector2(558, 276)
 texture = ExtResource("1_clf34")
 
-[node name="progressbars" type="Node2D" parent="UImash"]
+[node name="progressbars" type="Node2D" parent="UILeftTop"]
 unique_name_in_owner = true
 
-[node name="r1" type="Sprite2D" parent="UImash/progressbars"]
+[node name="r1" type="Sprite2D" parent="UILeftTop/progressbars"]
 position = Vector2(532, 259)
 texture = ExtResource("2_g6oks")
 
-[node name="r2" type="Sprite2D" parent="UImash/progressbars"]
+[node name="r2" type="Sprite2D" parent="UILeftTop/progressbars"]
 position = Vector2(543, 259)
 texture = ExtResource("3_m0y0m")
 
-[node name="r3" type="Sprite2D" parent="UImash/progressbars"]
+[node name="r3" type="Sprite2D" parent="UILeftTop/progressbars"]
 position = Vector2(555, 259)
 texture = ExtResource("3_m0y0m")
 
-[node name="r4" type="Sprite2D" parent="UImash/progressbars"]
+[node name="r4" type="Sprite2D" parent="UILeftTop/progressbars"]
 position = Vector2(568, 259)
 texture = ExtResource("3_m0y0m")
 
-[node name="r5" type="Sprite2D" parent="UImash/progressbars"]
+[node name="r5" type="Sprite2D" parent="UILeftTop/progressbars"]
 position = Vector2(580, 259)
 texture = ExtResource("3_m0y0m")
 
-[node name="r6" type="Sprite2D" parent="UImash/progressbars"]
+[node name="r6" type="Sprite2D" parent="UILeftTop/progressbars"]
 position = Vector2(593, 259)
 texture = ExtResource("3_m0y0m")
 
-[node name="r7" type="Sprite2D" parent="UImash/progressbars"]
+[node name="r7" type="Sprite2D" parent="UILeftTop/progressbars"]
 position = Vector2(606, 259)
 texture = ExtResource("3_m0y0m")
 
-[node name="r8" type="Sprite2D" parent="UImash/progressbars"]
+[node name="r8" type="Sprite2D" parent="UILeftTop/progressbars"]
 position = Vector2(616, 259)
 texture = ExtResource("3_m0y0m")
 
-[node name="r9" type="Sprite2D" parent="UImash/progressbars"]
+[node name="r9" type="Sprite2D" parent="UILeftTop/progressbars"]
 position = Vector2(630, 259)
 texture = ExtResource("3_m0y0m")
 
-[node name="r10" type="Sprite2D" parent="UImash/progressbars"]
+[node name="r10" type="Sprite2D" parent="UILeftTop/progressbars"]
 position = Vector2(646, 259)
 texture = ExtResource("4_5w21c")
 
-[node name="emptyred" type="Node2D" parent="UImash/progressbars"]
+[node name="emptyred" type="Node2D" parent="UILeftTop/progressbars"]
 
-[node name="rEmptyleftbar1" type="Sprite2D" parent="UImash/progressbars/emptyred"]
+[node name="rEmptyleftbar1" type="Sprite2D" parent="UILeftTop/progressbars/emptyred"]
 position = Vector2(532, 259)
 texture = ExtResource("6_3gfom")
 
-[node name="rEmptymidbar2" type="Sprite2D" parent="UImash/progressbars/emptyred"]
+[node name="rEmptymidbar2" type="Sprite2D" parent="UILeftTop/progressbars/emptyred"]
 position = Vector2(548, 259)
 texture = ExtResource("7_abgix")
 
-[node name="rEmptymidbar3" type="Sprite2D" parent="UImash/progressbars/emptyred"]
+[node name="rEmptymidbar3" type="Sprite2D" parent="UILeftTop/progressbars/emptyred"]
 position = Vector2(564, 259)
 texture = ExtResource("7_abgix")
 
-[node name="rEmptymidbar4" type="Sprite2D" parent="UImash/progressbars/emptyred"]
+[node name="rEmptymidbar4" type="Sprite2D" parent="UILeftTop/progressbars/emptyred"]
 position = Vector2(579, 259)
 texture = ExtResource("7_abgix")
 
-[node name="rEmptymidbar5" type="Sprite2D" parent="UImash/progressbars/emptyred"]
+[node name="rEmptymidbar5" type="Sprite2D" parent="UILeftTop/progressbars/emptyred"]
 position = Vector2(595, 259)
 texture = ExtResource("7_abgix")
 
-[node name="rEmptymidbar6" type="Sprite2D" parent="UImash/progressbars/emptyred"]
+[node name="rEmptymidbar6" type="Sprite2D" parent="UILeftTop/progressbars/emptyred"]
 position = Vector2(611, 259)
 texture = ExtResource("7_abgix")
 
-[node name="rEmptymidbar7" type="Sprite2D" parent="UImash/progressbars/emptyred"]
+[node name="rEmptymidbar7" type="Sprite2D" parent="UILeftTop/progressbars/emptyred"]
 position = Vector2(626, 259)
 texture = ExtResource("7_abgix")
 
-[node name="rEmptymidbar8" type="Sprite2D" parent="UImash/progressbars/emptyred"]
+[node name="rEmptymidbar8" type="Sprite2D" parent="UILeftTop/progressbars/emptyred"]
 position = Vector2(638, 259)
 texture = ExtResource("7_abgix")
 
-[node name="rEmptyrightbar10" type="Sprite2D" parent="UImash/progressbars/emptyred"]
+[node name="rEmptyrightbar10" type="Sprite2D" parent="UILeftTop/progressbars/emptyred"]
 position = Vector2(646, 259)
 texture = ExtResource("8_846j4")
 
-[node name="y1" type="Sprite2D" parent="UImash/progressbars"]
+[node name="y1" type="Sprite2D" parent="UILeftTop/progressbars"]
 position = Vector2(528, 276)
 texture = ExtResource("5_xspi1")
 
-[node name="y2" type="Sprite2D" parent="UImash/progressbars"]
+[node name="y2" type="Sprite2D" parent="UILeftTop/progressbars"]
 position = Vector2(540, 276)
 texture = ExtResource("6_5axrq")
 
-[node name="y3" type="Sprite2D" parent="UImash/progressbars"]
+[node name="y3" type="Sprite2D" parent="UILeftTop/progressbars"]
 position = Vector2(554, 276)
 texture = ExtResource("6_5axrq")
 
-[node name="y4" type="Sprite2D" parent="UImash/progressbars"]
+[node name="y4" type="Sprite2D" parent="UILeftTop/progressbars"]
 position = Vector2(568, 276)
 texture = ExtResource("6_5axrq")
 
-[node name="y5" type="Sprite2D" parent="UImash/progressbars"]
+[node name="y5" type="Sprite2D" parent="UILeftTop/progressbars"]
 position = Vector2(581, 276)
 texture = ExtResource("6_5axrq")
 
-[node name="y6" type="Sprite2D" parent="UImash/progressbars"]
+[node name="y6" type="Sprite2D" parent="UILeftTop/progressbars"]
 position = Vector2(594, 276)
 texture = ExtResource("6_5axrq")
 
-[node name="y7" type="Sprite2D" parent="UImash/progressbars"]
+[node name="y7" type="Sprite2D" parent="UILeftTop/progressbars"]
 position = Vector2(605, 276)
 texture = ExtResource("6_5axrq")
 
-[node name="y8" type="Sprite2D" parent="UImash/progressbars"]
+[node name="y8" type="Sprite2D" parent="UILeftTop/progressbars"]
 position = Vector2(616, 276)
 texture = ExtResource("6_5axrq")
 
-[node name="y9" type="Sprite2D" parent="UImash/progressbars"]
+[node name="y9" type="Sprite2D" parent="UILeftTop/progressbars"]
 position = Vector2(631, 276)
 texture = ExtResource("6_5axrq")
 
-[node name="y10" type="Sprite2D" parent="UImash/progressbars"]
+[node name="y10" type="Sprite2D" parent="UILeftTop/progressbars"]
 position = Vector2(644, 276)
 texture = ExtResource("7_48bd3")
 
-[node name="emptyyellow" type="Node2D" parent="UImash/progressbars"]
+[node name="emptyyellow" type="Node2D" parent="UILeftTop/progressbars"]
 
-[node name="yEmptyleftbar1" type="Sprite2D" parent="UImash/progressbars/emptyyellow"]
+[node name="yEmptyleftbar1" type="Sprite2D" parent="UILeftTop/progressbars/emptyyellow"]
 position = Vector2(529, 276)
 texture = ExtResource("6_3gfom")
 
-[node name="yEmptymidbar2" type="Sprite2D" parent="UImash/progressbars/emptyyellow"]
+[node name="yEmptymidbar2" type="Sprite2D" parent="UILeftTop/progressbars/emptyyellow"]
 position = Vector2(544, 276)
 texture = ExtResource("7_abgix")
 
-[node name="yEmptymidbar3" type="Sprite2D" parent="UImash/progressbars/emptyyellow"]
+[node name="yEmptymidbar3" type="Sprite2D" parent="UILeftTop/progressbars/emptyyellow"]
 position = Vector2(559, 276)
 texture = ExtResource("7_abgix")
 
-[node name="yEmptymidbar4" type="Sprite2D" parent="UImash/progressbars/emptyyellow"]
+[node name="yEmptymidbar4" type="Sprite2D" parent="UILeftTop/progressbars/emptyyellow"]
 position = Vector2(574, 276)
 texture = ExtResource("7_abgix")
 
-[node name="yEmptymidbar5" type="Sprite2D" parent="UImash/progressbars/emptyyellow"]
+[node name="yEmptymidbar5" type="Sprite2D" parent="UILeftTop/progressbars/emptyyellow"]
 position = Vector2(589, 276)
 texture = ExtResource("7_abgix")
 
-[node name="yEmptymidbar6" type="Sprite2D" parent="UImash/progressbars/emptyyellow"]
+[node name="yEmptymidbar6" type="Sprite2D" parent="UILeftTop/progressbars/emptyyellow"]
 position = Vector2(604, 276)
 texture = ExtResource("7_abgix")
 
-[node name="yEmptymidbar7" type="Sprite2D" parent="UImash/progressbars/emptyyellow"]
+[node name="yEmptymidbar7" type="Sprite2D" parent="UILeftTop/progressbars/emptyyellow"]
 position = Vector2(616, 276)
 texture = ExtResource("7_abgix")
 
-[node name="yEmptymidbar9" type="Sprite2D" parent="UImash/progressbars/emptyyellow"]
+[node name="yEmptymidbar9" type="Sprite2D" parent="UILeftTop/progressbars/emptyyellow"]
 position = Vector2(630, 276)
 texture = ExtResource("7_abgix")
 
-[node name="yEmptyrightbar10" type="Sprite2D" parent="UImash/progressbars/emptyyellow"]
+[node name="yEmptyrightbar10" type="Sprite2D" parent="UILeftTop/progressbars/emptyyellow"]
 position = Vector2(644, 276)
 texture = ExtResource("8_846j4")
 
-[node name="PortraitCircle" type="Sprite2D" parent="UImash"]
+[node name="PortraitCircle" type="Sprite2D" parent="UILeftTop"]
 position = Vector2(493, 264)
 texture = ExtResource("8_dgfkl")
 
-[node name="Money" type="Sprite2D" parent="UImash"]
+[node name="Money" type="Sprite2D" parent="UILeftTop"]
 position = Vector2(500, 301)
 scale = Vector2(0.578125, 0.578125)
 texture = ExtResource("10_q5q3s")
 
-[node name="MoneyLabel" type="Label" parent="UImash"]
+[node name="MoneyLabel" type="Label" parent="UILeftTop"]
 offset_left = 521.0
 offset_top = 294.0
 offset_right = 562.0
@@ -222,12 +244,12 @@ theme_override_font_sizes/font_size = 13
 text = "19257
 "
 
-[node name="Exp" type="Sprite2D" parent="UImash"]
+[node name="Exp" type="Sprite2D" parent="UILeftTop"]
 position = Vector2(590, 302)
 scale = Vector2(0.463541, 0.463541)
 texture = ExtResource("11_lgdqn")
 
-[node name="ExpLabel" type="Label" parent="UImash"]
+[node name="ExpLabel" type="Label" parent="UILeftTop"]
 offset_left = 613.0
 offset_top = 295.0
 offset_right = 658.0
@@ -235,8 +257,65 @@ offset_bottom = 312.0
 theme = ExtResource("14_uotcd")
 text = "25%"
 
-[node name="PlayerPortrait" type="AnimatedSprite2D" parent="UImash"]
+[node name="PlayerPortrait" type="AnimatedSprite2D" parent="UILeftTop"]
 position = Vector2(493, 265)
 scale = Vector2(0.578125, 0.578125)
 sprite_frames = SubResource("SpriteFrames_ehgl0")
-frame_progress = 0.276213
+autoplay = "default"
+frame_progress = 0.611172
+
+[node name="UIRightTop" type="Node2D" parent="."]
+position = Vector2(-610, -307)
+scale = Vector2(1.40481, 1.40481)
+
+[node name="Settingspaper" type="Sprite2D" parent="UIRightTop"]
+position = Vector2(1210.84, 258.397)
+scale = Vector2(0.288714, 0.308428)
+texture = ExtResource("19_uxc8i")
+
+[node name="Settingsbutton" type="Sprite2D" parent="UIRightTop"]
+position = Vector2(1210.84, 258.398)
+scale = Vector2(0.71184, 0.71184)
+texture = ExtResource("20_qbbic")
+
+[node name="Dialogue" type="Node2D" parent="."]
+position = Vector2(-610, -307)
+scale = Vector2(1.40481, 1.40481)
+
+[node name="DialoguePaper" type="Sprite2D" parent="Dialogue"]
+position = Vector2(843.53, 590.115)
+scale = Vector2(1.24863, 1.24863)
+texture = ExtResource("20_li0ww")
+
+[node name="PortraitCircle" type="Sprite2D" parent="Dialogue"]
+position = Vector2(522.491, 594.386)
+scale = Vector2(1.58435, 1.58435)
+texture = ExtResource("21_bah4s")
+
+[node name="NameLabel" type="Label" parent="Dialogue"]
+offset_left = 568.76
+offset_top = 536.727
+offset_right = 665.76
+offset_bottom = 564.727
+theme = ExtResource("14_uotcd")
+theme_override_font_sizes/font_size = 22
+text = "The name"
+
+[node name="TextLabel" type="Label" parent="Dialogue"]
+offset_left = 572.0
+offset_top = 572.0
+offset_right = 1195.0
+offset_bottom = 637.0
+theme = ExtResource("14_uotcd")
+text = "Welcome stranger, this is a random text generated by Reymon for Reymon because of  Reymon, By the power of this text, i can alingn the little underscore things i plan to have under each row of text, believe me, this will suck if i change the size of the paper"
+autowrap_mode = 2
+
+[node name="Portrait" type="AnimatedSprite2D" parent="Dialogue"]
+position = Vector2(522.491, 593.675)
+sprite_frames = SubResource("SpriteFrames_w5uao")
+autoplay = "default"
+frame_progress = 0.805857
+
+[node name="Interactions" type="Node2D" parent="."]
+position = Vector2(-610, -307)
+scale = Vector2(1.40481, 1.40481)
