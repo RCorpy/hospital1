@@ -9,3 +9,16 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+func showDialogue(name, text):
+	%NameLabel.text = name
+	%TextLabel.text = text
+	visible = true
+	
+func hideDialogue():
+	%NameLabel.text = ""
+	%TextLabel.text = ""
+	visible = false
+	
+	
+	
