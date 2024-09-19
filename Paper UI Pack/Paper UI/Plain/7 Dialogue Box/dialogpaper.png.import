@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsuthhw15f3is"
-path="res://.godot/imported/SettingsPaper.png-7a3530de80aa7f226347490da66fbd36.ctex"
+uid="uid://b4opt5lrj1mwy"
+path="res://.godot/imported/dialogpaper.png-d23bd673c7843cd8dc3dad2f7a9f6cc2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://realassets/SettingsPaper.png"
-dest_files=["res://.godot/imported/SettingsPaper.png-7a3530de80aa7f226347490da66fbd36.ctex"]
+source_file="res://Paper UI Pack/Paper UI/Plain/7 Dialogue Box/dialogpaper.png"
+dest_files=["res://.godot/imported/dialogpaper.png-d23bd673c7843cd8dc3dad2f7a9f6cc2.ctex"]
 
 [params]
 
