@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://frj1f8qfogdc"]
+[gd_scene load_steps=36 format=3 uid="uid://frj1f8qfogdc"]
 
 [ext_resource type="Texture2D" uid="uid://dx3037v5g7j2" path="res://realassets/HUD/PaperPlayerHUD.png" id="1_clf34"]
 [ext_resource type="Script" path="res://UImash.gd" id="1_xcap8"]
@@ -61,6 +61,22 @@ animations = [{
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tc3ef"]
 load_path = "res://.godot/imported/settingspaper.png-10334058b828f743971c6a6a6c8f9a45.ctex"
+
+[sub_resource type="Theme" id="Theme_8fuba"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kb8hi"]
+bg_color = Color(0.360784, 0.690196, 0.329412, 1)
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.501961, 0.894118, 0.729412, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 14
 
 [node name="UI" type="Node2D"]
 
@@ -362,44 +378,45 @@ unique_name_in_owner = true
 position = Vector2(-50.0836, 26.4177)
 scale = Vector2(0.159036, 0.159036)
 
-[node name="Node2D" type="Node2D" parent="UIRightTop/SettingsMenu"]
-
-[node name="GreyBackground" type="ColorRect" parent="UIRightTop/SettingsMenu/Node2D"]
+[node name="GreyBackground" type="ColorRect" parent="UIRightTop/SettingsMenu"]
 modulate = Color(0.470588, 0.470588, 0.776471, 0.227451)
 offset_left = -440.157
 offset_top = -198.444
 offset_right = 397.843
 offset_bottom = 278.556
 
-[node name="SettingsMenuPaper" type="Sprite2D" parent="UIRightTop/SettingsMenu/Node2D"]
+[node name="SettingsMenuPaper" type="Sprite2D" parent="UIRightTop/SettingsMenu"]
 position = Vector2(-15.6605, 27.7617)
 scale = Vector2(1.41097, 1.80502)
 texture = SubResource("CompressedTexture2D_tc3ef")
 
-[node name="ButtonNormal" type="Button" parent="UIRightTop/SettingsMenu/Node2D"]
+[node name="MainSettings" type="Node2D" parent="UIRightTop/SettingsMenu"]
+visible = false
+
+[node name="Option1Button" type="Button" parent="UIRightTop/SettingsMenu/MainSettings"]
 offset_left = -71.1843
 offset_top = -61.9305
 offset_right = 36.8157
 offset_bottom = -40.9305
 
-[node name="leftSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/Node2D/ButtonNormal"]
+[node name="leftSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/MainSettings/Option1Button"]
 position = Vector2(10.9684, 11.0352)
 texture = ExtResource("26_omc4d")
 flip_h = true
 
-[node name="midSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/Node2D/ButtonNormal"]
+[node name="midSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/MainSettings/Option1Button"]
 position = Vector2(39.442, 11.0352)
 texture = ExtResource("27_6dot6")
 
-[node name="midSide2" type="Sprite2D" parent="UIRightTop/SettingsMenu/Node2D/ButtonNormal"]
+[node name="midSide2" type="Sprite2D" parent="UIRightTop/SettingsMenu/MainSettings/Option1Button"]
 position = Vector2(67.2037, 11.0352)
 texture = ExtResource("27_6dot6")
 
-[node name="rightSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/Node2D/ButtonNormal"]
+[node name="rightSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/MainSettings/Option1Button"]
 position = Vector2(98.5247, 11.0352)
 texture = ExtResource("26_omc4d")
 
-[node name="Label" type="Label" parent="UIRightTop/SettingsMenu/Node2D/ButtonNormal"]
+[node name="Label" type="Label" parent="UIRightTop/SettingsMenu/MainSettings/Option1Button"]
 layout_mode = 0
 offset_left = 34.1683
 offset_top = 2.84736
@@ -409,30 +426,30 @@ theme = ExtResource("14_uotcd")
 theme_override_font_sizes/font_size = 12
 text = "Opcion 1"
 
-[node name="ButtonNormal2" type="Button" parent="UIRightTop/SettingsMenu/Node2D"]
+[node name="Option2Button" type="Button" parent="UIRightTop/SettingsMenu/MainSettings"]
 offset_left = -71.1843
 offset_top = -31.3214
 offset_right = 36.8157
 offset_bottom = -10.3214
 
-[node name="leftSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/Node2D/ButtonNormal2"]
+[node name="leftSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/MainSettings/Option2Button"]
 position = Vector2(10.9684, 11.0352)
 texture = ExtResource("26_omc4d")
 flip_h = true
 
-[node name="midSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/Node2D/ButtonNormal2"]
+[node name="midSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/MainSettings/Option2Button"]
 position = Vector2(39.442, 11.0352)
 texture = ExtResource("27_6dot6")
 
-[node name="midSide2" type="Sprite2D" parent="UIRightTop/SettingsMenu/Node2D/ButtonNormal2"]
+[node name="midSide2" type="Sprite2D" parent="UIRightTop/SettingsMenu/MainSettings/Option2Button"]
 position = Vector2(67.2037, 11.0352)
 texture = ExtResource("27_6dot6")
 
-[node name="rightSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/Node2D/ButtonNormal2"]
+[node name="rightSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/MainSettings/Option2Button"]
 position = Vector2(98.5247, 11.0352)
 texture = ExtResource("26_omc4d")
 
-[node name="Label" type="Label" parent="UIRightTop/SettingsMenu/Node2D/ButtonNormal2"]
+[node name="Label" type="Label" parent="UIRightTop/SettingsMenu/MainSettings/Option2Button"]
 layout_mode = 0
 offset_left = 34.1683
 offset_top = 2.84736
@@ -442,30 +459,30 @@ theme = ExtResource("14_uotcd")
 theme_override_font_sizes/font_size = 12
 text = "Opcion 2"
 
-[node name="ButtonNormal3" type="Button" parent="UIRightTop/SettingsMenu/Node2D"]
+[node name="Option3Button" type="Button" parent="UIRightTop/SettingsMenu/MainSettings"]
 offset_left = -69.7606
 offset_top = -0.000442505
 offset_right = 38.2394
 offset_bottom = 20.9996
 
-[node name="leftSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/Node2D/ButtonNormal3"]
+[node name="leftSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/MainSettings/Option3Button"]
 position = Vector2(10.9684, 11.0352)
 texture = ExtResource("26_omc4d")
 flip_h = true
 
-[node name="midSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/Node2D/ButtonNormal3"]
+[node name="midSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/MainSettings/Option3Button"]
 position = Vector2(39.442, 11.0352)
 texture = ExtResource("27_6dot6")
 
-[node name="midSide2" type="Sprite2D" parent="UIRightTop/SettingsMenu/Node2D/ButtonNormal3"]
+[node name="midSide2" type="Sprite2D" parent="UIRightTop/SettingsMenu/MainSettings/Option3Button"]
 position = Vector2(67.2037, 11.0352)
 texture = ExtResource("27_6dot6")
 
-[node name="rightSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/Node2D/ButtonNormal3"]
+[node name="rightSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/MainSettings/Option3Button"]
 position = Vector2(98.5247, 11.0352)
 texture = ExtResource("26_omc4d")
 
-[node name="Label" type="Label" parent="UIRightTop/SettingsMenu/Node2D/ButtonNormal3"]
+[node name="Label" type="Label" parent="UIRightTop/SettingsMenu/MainSettings/Option3Button"]
 layout_mode = 0
 offset_left = 34.8802
 offset_top = 2.84736
@@ -476,30 +493,30 @@ theme_override_font_sizes/font_size = 12
 text = "Opcion 3
 "
 
-[node name="ButtonBack" type="Button" parent="UIRightTop/SettingsMenu/Node2D"]
+[node name="ButtonBack" type="Button" parent="UIRightTop/SettingsMenu/MainSettings"]
 offset_left = -71.1843
 offset_top = 100.369
 offset_right = 36.8157
 offset_bottom = 121.369
 
-[node name="leftSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/Node2D/ButtonBack"]
+[node name="leftSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/MainSettings/ButtonBack"]
 position = Vector2(9.96574, 9.96576)
 texture = ExtResource("28_r5etc")
 flip_h = true
 
-[node name="midSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/Node2D/ButtonBack"]
+[node name="midSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/MainSettings/ButtonBack"]
 position = Vector2(40.5749, 9.96576)
 texture = ExtResource("29_iemb8")
 
-[node name="midSide2" type="Sprite2D" parent="UIRightTop/SettingsMenu/Node2D/ButtonBack"]
+[node name="midSide2" type="Sprite2D" parent="UIRightTop/SettingsMenu/MainSettings/ButtonBack"]
 position = Vector2(71.184, 9.96576)
 texture = ExtResource("29_iemb8")
 
-[node name="rightSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/Node2D/ButtonBack"]
+[node name="rightSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/MainSettings/ButtonBack"]
 position = Vector2(102.505, 9.96576)
 texture = ExtResource("28_r5etc")
 
-[node name="Label" type="Label" parent="UIRightTop/SettingsMenu/Node2D/ButtonBack"]
+[node name="Label" type="Label" parent="UIRightTop/SettingsMenu/MainSettings/ButtonBack"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -518,5 +535,70 @@ text = "Volver
 "
 horizontal_alignment = 1
 
+[node name="Option1" type="Node2D" parent="UIRightTop/SettingsMenu"]
+
+[node name="Volume" type="HSlider" parent="UIRightTop/SettingsMenu/Option1"]
+offset_left = -76.8266
+offset_top = -48.4491
+offset_right = 52.1734
+offset_bottom = -32.4491
+theme = SubResource("Theme_8fuba")
+theme_override_styles/slider = SubResource("StyleBoxFlat_kb8hi")
+value = 25.0
+
+[node name="BackButton" type="Button" parent="UIRightTop/SettingsMenu/Option1"]
+offset_left = -60.2155
+offset_top = 102.436
+offset_right = 33.7845
+offset_bottom = 120.436
+
+[node name="leftSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/Option1/BackButton"]
+position = Vector2(0.0809822, 8.38654)
+texture = ExtResource("28_r5etc")
+flip_h = true
+
+[node name="midSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/Option1/BackButton"]
+position = Vector2(30.6901, 8.38654)
+texture = ExtResource("29_iemb8")
+
+[node name="midSide2" type="Sprite2D" parent="UIRightTop/SettingsMenu/Option1/BackButton"]
+position = Vector2(61.2992, 8.38654)
+texture = ExtResource("29_iemb8")
+
+[node name="rightSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/Option1/BackButton"]
+position = Vector2(92.6202, 8.38654)
+texture = ExtResource("28_r5etc")
+
+[node name="Label" type="Label" parent="UIRightTop/SettingsMenu/Option1/BackButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.8495
+offset_top = -7.61574
+offset_right = 33.1505
+offset_bottom = 8.38426
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("14_uotcd")
+theme_override_font_sizes/font_size = 12
+text = "Volver
+"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="UIRightTop/SettingsMenu/Option1"]
+offset_left = -83.7479
+offset_top = -70.5973
+offset_right = -29.7479
+offset_bottom = -47.5973
+theme = ExtResource("14_uotcd")
+text = "Volumen
+"
+
 [connection signal="pressed" from="UIRightTop" to="UIRightTop" method="_on_pressed"]
-[connection signal="pressed" from="UIRightTop/SettingsMenu/Node2D/ButtonBack" to="UIRightTop" method="_on_button_back_pressed"]
+[connection signal="pressed" from="UIRightTop/SettingsMenu/MainSettings/Option1Button" to="UIRightTop" method="_on_option_1_button_pressed"]
+[connection signal="pressed" from="UIRightTop/SettingsMenu/MainSettings/ButtonBack" to="UIRightTop" method="_on_button_back_pressed"]
+[connection signal="value_changed" from="UIRightTop/SettingsMenu/Option1/Volume" to="UIRightTop" method="_on_volume_value_changed"]
+[connection signal="pressed" from="UIRightTop/SettingsMenu/Option1/BackButton" to="UIRightTop" method="_on_back_button_pressed"]
