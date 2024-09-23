@@ -391,7 +391,6 @@ scale = Vector2(1.41097, 1.80502)
 texture = SubResource("CompressedTexture2D_tc3ef")
 
 [node name="MainSettings" type="Node2D" parent="UIRightTop/SettingsMenu"]
-visible = false
 
 [node name="Option1Button" type="Button" parent="UIRightTop/SettingsMenu/MainSettings"]
 offset_left = -71.1843
@@ -418,13 +417,14 @@ texture = ExtResource("26_omc4d")
 
 [node name="Label" type="Label" parent="UIRightTop/SettingsMenu/MainSettings/Option1Button"]
 layout_mode = 0
-offset_left = 34.1683
-offset_top = 2.84736
-offset_right = 79.1683
-offset_bottom = 25.8474
+offset_left = 26.1958
+offset_top = 3.79159
+offset_right = 85.1958
+offset_bottom = 26.7916
 theme = ExtResource("14_uotcd")
 theme_override_font_sizes/font_size = 12
 text = "Opcion 1"
+horizontal_alignment = 1
 
 [node name="Option2Button" type="Button" parent="UIRightTop/SettingsMenu/MainSettings"]
 offset_left = -71.1843
@@ -451,13 +451,14 @@ texture = ExtResource("26_omc4d")
 
 [node name="Label" type="Label" parent="UIRightTop/SettingsMenu/MainSettings/Option2Button"]
 layout_mode = 0
-offset_left = 34.1683
-offset_top = 2.84736
-offset_right = 79.1683
-offset_bottom = 25.8474
+offset_left = 24.8115
+offset_top = 2.94414
+offset_right = 88.8115
+offset_bottom = 25.9441
 theme = ExtResource("14_uotcd")
 theme_override_font_sizes/font_size = 12
 text = "Opcion 2"
+horizontal_alignment = 1
 
 [node name="Option3Button" type="Button" parent="UIRightTop/SettingsMenu/MainSettings"]
 offset_left = -69.7606
@@ -484,14 +485,15 @@ texture = ExtResource("26_omc4d")
 
 [node name="Label" type="Label" parent="UIRightTop/SettingsMenu/MainSettings/Option3Button"]
 layout_mode = 0
-offset_left = 34.8802
-offset_top = 2.84736
-offset_right = 82.8802
-offset_bottom = 25.8474
+offset_left = 22.6957
+offset_top = 3.46125
+offset_right = 86.6957
+offset_bottom = 26.4612
 theme = ExtResource("14_uotcd")
 theme_override_font_sizes/font_size = 12
 text = "Opcion 3
 "
+horizontal_alignment = 1
 
 [node name="ButtonBack" type="Button" parent="UIRightTop/SettingsMenu/MainSettings"]
 offset_left = -71.1843
@@ -536,6 +538,7 @@ text = "Volver
 horizontal_alignment = 1
 
 [node name="Option1" type="Node2D" parent="UIRightTop/SettingsMenu"]
+visible = false
 
 [node name="Volume" type="HSlider" parent="UIRightTop/SettingsMenu/Option1"]
 offset_left = -76.8266
@@ -597,8 +600,130 @@ theme = ExtResource("14_uotcd")
 text = "Volumen
 "
 
+[node name="VolValue" type="Label" parent="UIRightTop/SettingsMenu/Option1"]
+offset_left = 24.9167
+offset_top = -70.5973
+offset_right = 50.9167
+offset_bottom = -53.5973
+theme = ExtResource("14_uotcd")
+text = "50
+"
+
+[node name="Option2" type="Node2D" parent="UIRightTop/SettingsMenu"]
+visible = false
+
+[node name="EnglishButton" type="Button" parent="UIRightTop/SettingsMenu/Option2"]
+offset_left = -60.0
+offset_top = -55.0
+offset_right = 35.0
+offset_bottom = -36.0
+
+[node name="leftSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/Option2/EnglishButton"]
+position = Vector2(6.09471, 10.0926)
+texture = ExtResource("26_omc4d")
+flip_h = true
+
+[node name="midSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/Option2/EnglishButton"]
+position = Vector2(34.5683, 10.0926)
+texture = ExtResource("27_6dot6")
+
+[node name="midSide2" type="Sprite2D" parent="UIRightTop/SettingsMenu/Option2/EnglishButton"]
+position = Vector2(62.33, 10.0926)
+texture = ExtResource("27_6dot6")
+
+[node name="rightSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/Option2/EnglishButton"]
+position = Vector2(93.651, 10.0926)
+texture = ExtResource("26_omc4d")
+
+[node name="Label" type="Label" parent="UIRightTop/SettingsMenu/Option2/EnglishButton"]
+layout_mode = 0
+offset_left = 29.5462
+offset_top = 1.01389
+offset_right = 72.5462
+offset_bottom = 18.0139
+theme = ExtResource("14_uotcd")
+text = "English"
+
+[node name="SpanishButton" type="Button" parent="UIRightTop/SettingsMenu/Option2"]
+offset_left = -62.0
+offset_top = -19.0
+offset_right = 37.0
+offset_bottom = 2.0
+
+[node name="leftSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/Option2/SpanishButton"]
+position = Vector2(7.40255, 10.7755)
+texture = ExtResource("26_omc4d")
+flip_h = true
+
+[node name="midSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/Option2/SpanishButton"]
+position = Vector2(35.8762, 10.7755)
+texture = ExtResource("27_6dot6")
+
+[node name="midSide2" type="Sprite2D" parent="UIRightTop/SettingsMenu/Option2/SpanishButton"]
+position = Vector2(63.6378, 10.7755)
+texture = ExtResource("27_6dot6")
+
+[node name="rightSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/Option2/SpanishButton"]
+position = Vector2(94.9588, 10.7755)
+texture = ExtResource("26_omc4d")
+
+[node name="Label" type="Label" parent="UIRightTop/SettingsMenu/Option2/SpanishButton"]
+layout_mode = 0
+offset_left = 30.1619
+offset_top = 2.38898
+offset_right = 76.1619
+offset_bottom = 25.389
+theme = ExtResource("14_uotcd")
+text = "Español"
+
+[node name="BackButton" type="Button" parent="UIRightTop/SettingsMenu/Option2"]
+offset_left = -60.2155
+offset_top = 102.436
+offset_right = 33.7845
+offset_bottom = 120.436
+
+[node name="leftSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/Option2/BackButton"]
+position = Vector2(0.0809822, 8.38654)
+texture = ExtResource("28_r5etc")
+flip_h = true
+
+[node name="midSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/Option2/BackButton"]
+position = Vector2(30.6901, 8.38654)
+texture = ExtResource("29_iemb8")
+
+[node name="midSide2" type="Sprite2D" parent="UIRightTop/SettingsMenu/Option2/BackButton"]
+position = Vector2(61.2992, 8.38654)
+texture = ExtResource("29_iemb8")
+
+[node name="rightSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/Option2/BackButton"]
+position = Vector2(92.6202, 8.38654)
+texture = ExtResource("28_r5etc")
+
+[node name="Label" type="Label" parent="UIRightTop/SettingsMenu/Option2/BackButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.8495
+offset_top = -7.61574
+offset_right = 33.1505
+offset_bottom = 8.38426
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("14_uotcd")
+theme_override_font_sizes/font_size = 12
+text = "Volver
+"
+horizontal_alignment = 1
+
 [connection signal="pressed" from="UIRightTop" to="UIRightTop" method="_on_pressed"]
 [connection signal="pressed" from="UIRightTop/SettingsMenu/MainSettings/Option1Button" to="UIRightTop" method="_on_option_1_button_pressed"]
+[connection signal="pressed" from="UIRightTop/SettingsMenu/MainSettings/Option2Button" to="UIRightTop" method="_on_option_2_button_pressed"]
 [connection signal="pressed" from="UIRightTop/SettingsMenu/MainSettings/ButtonBack" to="UIRightTop" method="_on_button_back_pressed"]
 [connection signal="value_changed" from="UIRightTop/SettingsMenu/Option1/Volume" to="UIRightTop" method="_on_volume_value_changed"]
 [connection signal="pressed" from="UIRightTop/SettingsMenu/Option1/BackButton" to="UIRightTop" method="_on_back_button_pressed"]
+[connection signal="pressed" from="UIRightTop/SettingsMenu/Option2/EnglishButton" to="UIRightTop" method="_on_english_button_pressed"]
+[connection signal="pressed" from="UIRightTop/SettingsMenu/Option2/SpanishButton" to="UIRightTop" method="_on_spanish_button_pressed"]
+[connection signal="pressed" from="UIRightTop/SettingsMenu/Option2/BackButton" to="UIRightTop" method="_on_back_button_pressed"]
