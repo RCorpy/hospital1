@@ -1,6 +1,7 @@
 extends Button
 
 signal enablecontrols(isTrue)
+signal signal_translate
 
 
 func _ready():
@@ -13,6 +14,7 @@ func _process(delta):
 
 
 func translate():
+	emit_signal("signal_translate")
 	$SettingsMenu/MainSettings/Option1Button/Label.text = tr("Option1")
 	$SettingsMenu/MainSettings/Option2Button/Label.text = tr("Option2")
 	$SettingsMenu/MainSettings/Option3Button/Label.text = tr("Option3")
@@ -66,3 +68,7 @@ func _on_english_button_pressed():
 	translate()
 
 
+
+
+func _on_continue_button_pressed():
+	%Popup.visible = false

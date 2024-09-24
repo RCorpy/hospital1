@@ -1,5 +1,6 @@
-[gd_scene load_steps=36 format=3 uid="uid://frj1f8qfogdc"]
+[gd_scene load_steps=56 format=3 uid="uid://frj1f8qfogdc"]
 
+[ext_resource type="Script" path="res://UIRoot.gd" id="1_c7bhu"]
 [ext_resource type="Texture2D" uid="uid://dx3037v5g7j2" path="res://realassets/HUD/PaperPlayerHUD.png" id="1_clf34"]
 [ext_resource type="Script" path="res://UImash.gd" id="1_xcap8"]
 [ext_resource type="Texture2D" uid="uid://bgbrh53y5otlo" path="res://Content/3 Progress Bars/1.png" id="2_g6oks"]
@@ -30,6 +31,20 @@
 [ext_resource type="Texture2D" uid="uid://cecnw2b8lngtk" path="res://realassets/buttons/normalmidbutton.png" id="27_6dot6"]
 [ext_resource type="Texture2D" uid="uid://ckkii7sghd0dh" path="res://realassets/buttons/redlsidebutton.png" id="28_r5etc"]
 [ext_resource type="Texture2D" uid="uid://dirtpl276fk32" path="res://realassets/buttons/redmidbutton.png" id="29_iemb8"]
+[ext_resource type="Texture2D" uid="uid://dgxyn2ff0e3o8" path="res://realassets/popup/popuppaper.png" id="32_uvrfa"]
+[ext_resource type="Texture2D" uid="uid://ckxhfq7sww8lq" path="res://realassets/itemholder/itemholderpaper.png" id="33_djuui"]
+[ext_resource type="Script" path="res://ItemHolder.gd" id="33_f72wj"]
+[ext_resource type="Texture2D" uid="uid://cyd6bgoe8tfol" path="res://realassets/itemholder/underscore.png" id="34_fj3ij"]
+[ext_resource type="Texture2D" uid="uid://b753536150i4y" path="res://realassets/itemholder/usebutton.png" id="35_bku6a"]
+[ext_resource type="Texture2D" uid="uid://cnckowksur5nd" path="res://realassets/itemholder/holdericon.png" id="36_5vkb2"]
+[ext_resource type="Texture2D" uid="uid://cl7x2hlefncy8" path="res://realassets/itemholder/highlighter.png" id="37_fxwoe"]
+[ext_resource type="Texture2D" uid="uid://kqqtt7418oaj" path="res://realassets/itemholder/heart.png" id="37_pyare"]
+[ext_resource type="Texture2D" uid="uid://tbw5g8cuxt2q" path="res://realassets/itemholder/bandaid.png" id="39_qfw0f"]
+[ext_resource type="Texture2D" uid="uid://cfqner7qp7w7c" path="res://realassets/itemholder/hug.png" id="40_jtr1h"]
+[ext_resource type="Texture2D" uid="uid://c6qe5qwo3d6hp" path="res://realassets/itemholder/shower.png" id="41_7qwsk"]
+[ext_resource type="Texture2D" uid="uid://bpalc2yfea74n" path="res://realassets/itemholder/pill.png" id="42_q7h08"]
+[ext_resource type="Texture2D" uid="uid://dn3yr7qrfv1yt" path="res://realassets/itemholder/ice.png" id="43_ax5yi"]
+[ext_resource type="Texture2D" uid="uid://c52yvc8v5cf3j" path="res://realassets/itemholder/lullaby.png" id="44_0bte4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ehgl0"]
 animations = [{
@@ -78,7 +93,18 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 corner_detail = 14
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_anjfk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2xcdf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5gmlw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pgp72"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_adkm3"]
+
 [node name="UI" type="Node2D"]
+script = ExtResource("1_c7bhu")
 
 [node name="UILeftTop" type="Node2D" parent="."]
 position = Vector2(1, 4.99997)
@@ -291,6 +317,7 @@ autoplay = "default"
 frame_progress = 0.609382
 
 [node name="Dialogue" type="Node2D" parent="."]
+visible = false
 position = Vector2(-610, -307)
 scale = Vector2(1.40481, 1.40481)
 script = ExtResource("21_guc0o")
@@ -393,10 +420,10 @@ texture = SubResource("CompressedTexture2D_tc3ef")
 [node name="MainSettings" type="Node2D" parent="UIRightTop/SettingsMenu"]
 
 [node name="Option1Button" type="Button" parent="UIRightTop/SettingsMenu/MainSettings"]
-offset_left = -71.1843
-offset_top = -61.9305
-offset_right = 36.8157
-offset_bottom = -40.9305
+offset_left = -68.521
+offset_top = -60.2153
+offset_right = 39.479
+offset_bottom = -39.2153
 
 [node name="leftSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/MainSettings/Option1Button"]
 position = Vector2(10.9684, 11.0352)
@@ -427,10 +454,10 @@ text = "Opcion 1"
 horizontal_alignment = 1
 
 [node name="Option2Button" type="Button" parent="UIRightTop/SettingsMenu/MainSettings"]
-offset_left = -71.1843
-offset_top = -31.3214
-offset_right = 36.8157
-offset_bottom = -10.3214
+offset_left = -68.521
+offset_top = -31.1458
+offset_right = 39.479
+offset_bottom = -10.1458
 
 [node name="leftSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/MainSettings/Option2Button"]
 position = Vector2(10.9684, 11.0352)
@@ -461,10 +488,10 @@ text = "Opcion 2"
 horizontal_alignment = 1
 
 [node name="Option3Button" type="Button" parent="UIRightTop/SettingsMenu/MainSettings"]
-offset_left = -69.7606
-offset_top = -0.000442505
-offset_right = 38.2394
-offset_bottom = 20.9996
+offset_left = -67.1368
+offset_top = -0.691983
+offset_right = 40.8632
+offset_bottom = 20.3081
 
 [node name="leftSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/MainSettings/Option3Button"]
 position = Vector2(10.9684, 11.0352)
@@ -496,10 +523,10 @@ text = "Opcion 3
 horizontal_alignment = 1
 
 [node name="ButtonBack" type="Button" parent="UIRightTop/SettingsMenu/MainSettings"]
-offset_left = -71.1843
-offset_top = 100.369
-offset_right = 36.8157
-offset_bottom = 121.369
+offset_left = -69.2132
+offset_top = 99.6671
+offset_right = 38.7868
+offset_bottom = 120.667
 
 [node name="leftSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/MainSettings/ButtonBack"]
 position = Vector2(9.96574, 9.96576)
@@ -525,10 +552,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -31.933
-offset_top = -8.36448
-offset_right = 35.067
-offset_bottom = 7.63552
+offset_left = -31.1597
+offset_top = -8.4236
+offset_right = 35.8403
+offset_bottom = 7.5764
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("14_uotcd")
@@ -613,10 +640,10 @@ text = "50
 visible = false
 
 [node name="EnglishButton" type="Button" parent="UIRightTop/SettingsMenu/Option2"]
-offset_left = -60.0
-offset_top = -55.0
-offset_right = 35.0
-offset_bottom = -36.0
+offset_left = -62.984
+offset_top = -55.3704
+offset_right = 32.016
+offset_bottom = -36.3704
 
 [node name="leftSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/Option2/EnglishButton"]
 position = Vector2(6.09471, 10.0926)
@@ -645,10 +672,10 @@ theme = ExtResource("14_uotcd")
 text = "English"
 
 [node name="SpanishButton" type="Button" parent="UIRightTop/SettingsMenu/Option2"]
-offset_left = -62.0
-offset_top = -19.0
-offset_right = 37.0
-offset_bottom = 2.0
+offset_left = -65.0604
+offset_top = -21.4559
+offset_right = 33.9396
+offset_bottom = -0.455938
 
 [node name="leftSide" type="Sprite2D" parent="UIRightTop/SettingsMenu/Option2/SpanishButton"]
 position = Vector2(7.40255, 10.7755)
@@ -718,12 +745,221 @@ text = "Volver
 "
 horizontal_alignment = 1
 
+[node name="Popup" type="Node2D" parent="."]
+unique_name_in_owner = true
+visible = false
+position = Vector2(592, 298)
+
+[node name="Sprite2D" type="Sprite2D" parent="Popup"]
+position = Vector2(-1.00002, 5.72205e-06)
+scale = Vector2(2.6875, 1.40179)
+texture = ExtResource("32_uvrfa")
+
+[node name="ContinueButton" type="Button" parent="Popup"]
+offset_left = -56.0
+offset_top = 16.0
+offset_right = 58.0
+offset_bottom = 35.0
+scale = Vector2(0.993074, 1)
+
+[node name="leftSide" type="Sprite2D" parent="Popup/ContinueButton"]
+position = Vector2(10.9651, 9)
+texture = ExtResource("28_r5etc")
+flip_h = true
+
+[node name="midSide" type="Sprite2D" parent="Popup/ContinueButton"]
+position = Vector2(41.5743, 9)
+texture = ExtResource("29_iemb8")
+
+[node name="midSide2" type="Sprite2D" parent="Popup/ContinueButton"]
+position = Vector2(72.1834, 9)
+texture = ExtResource("29_iemb8")
+
+[node name="rightSide" type="Sprite2D" parent="Popup/ContinueButton"]
+position = Vector2(103.504, 9)
+texture = ExtResource("28_r5etc")
+
+[node name="Label" type="Label" parent="Popup/ContinueButton"]
+layout_mode = 0
+offset_left = -1.00697
+offset_top = 1.0
+offset_right = 112.993
+offset_bottom = 18.0
+theme = ExtResource("14_uotcd")
+text = "Continuar"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Popup"]
+offset_left = -116.0
+offset_top = -52.0
+offset_right = 126.0
+offset_bottom = -26.0
+theme = ExtResource("14_uotcd")
+theme_override_font_sizes/font_size = 21
+text = "Guardado correctamente"
+
+[node name="ItemHolder" type="Node2D" parent="."]
+position = Vector2(574, 554)
+scale = Vector2(2, 2.04)
+script = ExtResource("33_f72wj")
+
+[node name="PaperSprite" type="Sprite2D" parent="ItemHolder"]
+texture = ExtResource("33_djuui")
+
+[node name="Underscore" type="Sprite2D" parent="ItemHolder"]
+position = Vector2(1, -17.1569)
+scale = Vector2(0.12, 0.176472)
+texture = ExtResource("34_fj3ij")
+
+[node name="UseLabel" type="Label" parent="ItemHolder"]
+offset_left = -16.0
+offset_top = -34.3137
+offset_right = 17.0
+offset_bottom = -17.3137
+theme = ExtResource("14_uotcd")
+text = "USAR"
+horizontal_alignment = 1
+
+[node name="useButton" type="Button" parent="ItemHolder"]
+offset_left = -48.0
+offset_top = -13.0
+offset_right = 49.0
+offset_bottom = 32.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_anjfk")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2xcdf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5gmlw")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_pgp72")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_adkm3")
+
+[node name="Use" type="Sprite2D" parent="ItemHolder/useButton"]
+position = Vector2(49.5, 21.8235)
+scale = Vector2(1.29375, 1)
+texture = ExtResource("35_bku6a")
+
+[node name="Sprite2D" type="Sprite2D" parent="ItemHolder/useButton"]
+position = Vector2(49, 28.1961)
+scale = Vector2(0.0745736, 0.0745736)
+texture = ExtResource("37_pyare")
+
+[node name="Button1" type="Button" parent="ItemHolder"]
+offset_left = -241.5
+offset_top = -12.7451
+offset_right = -204.5
+offset_bottom = 19.2549
+
+[node name="Holdericon" type="Sprite2D" parent="ItemHolder/Button1"]
+position = Vector2(18.375, 16.0539)
+scale = Vector2(1.35156, 1.20251)
+texture = ExtResource("36_5vkb2")
+
+[node name="Sprite48x48" type="Sprite2D" parent="ItemHolder/Button1"]
+position = Vector2(18.5, 15.6863)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("39_qfw0f")
+
+[node name="Button2" type="Button" parent="ItemHolder"]
+offset_left = -183.0
+offset_top = -13.0
+offset_right = -147.0
+offset_bottom = 19.0
+
+[node name="Holdericon" type="Sprite2D" parent="ItemHolder/Button2"]
+position = Vector2(18, 16.4314)
+scale = Vector2(1.35156, 1.20251)
+texture = ExtResource("36_5vkb2")
+
+[node name="Sprite48x48" type="Sprite2D" parent="ItemHolder/Button2"]
+position = Vector2(18.5, 15.6863)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("40_jtr1h")
+
+[node name="Button3" type="Button" parent="ItemHolder"]
+offset_left = -126.0
+offset_top = -13.2353
+offset_right = -90.0
+offset_bottom = 18.7647
+
+[node name="Holdericon" type="Sprite2D" parent="ItemHolder/Button3"]
+position = Vector2(18, 15.6863)
+scale = Vector2(1.35156, 1.20251)
+texture = ExtResource("36_5vkb2")
+
+[node name="Sprite48x48" type="Sprite2D" parent="ItemHolder/Button3"]
+position = Vector2(18.5, 15.6863)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("41_7qwsk")
+
+[node name="Button4" type="Button" parent="ItemHolder"]
+offset_left = 90.5
+offset_top = -12.2549
+offset_right = 127.5
+offset_bottom = 19.7451
+
+[node name="Holdericon" type="Sprite2D" parent="ItemHolder/Button4"]
+position = Vector2(18.5, 15.6863)
+scale = Vector2(1.35156, 1.20251)
+texture = ExtResource("36_5vkb2")
+
+[node name="Sprite48x48" type="Sprite2D" parent="ItemHolder/Button4"]
+position = Vector2(18.5, 15.6863)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("42_q7h08")
+
+[node name="Button5" type="Button" parent="ItemHolder"]
+offset_left = 149.0
+offset_top = -12.5098
+offset_right = 185.0
+offset_bottom = 19.4902
+
+[node name="Holdericon" type="Sprite2D" parent="ItemHolder/Button5"]
+position = Vector2(18.5, 15.9412)
+scale = Vector2(1.35156, 1.20251)
+texture = ExtResource("36_5vkb2")
+
+[node name="Sprite48x48" type="Sprite2D" parent="ItemHolder/Button5"]
+position = Vector2(18.5, 15.6863)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("43_ax5yi")
+
+[node name="Button6" type="Button" parent="ItemHolder"]
+offset_left = 206.0
+offset_top = -12.7451
+offset_right = 242.0
+offset_bottom = 19.2549
+
+[node name="Holdericon" type="Sprite2D" parent="ItemHolder/Button6"]
+position = Vector2(18.5, 16.1765)
+scale = Vector2(1.35156, 1.20251)
+texture = ExtResource("36_5vkb2")
+
+[node name="Sprite48x48" type="Sprite2D" parent="ItemHolder/Button6"]
+position = Vector2(18.5, 15.6863)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("44_0bte4")
+
+[node name="highlighter" type="Sprite2D" parent="ItemHolder"]
+unique_name_in_owner = true
+position = Vector2(-223.5, 3.43137)
+scale = Vector2(4.04, 4.04)
+texture = ExtResource("37_fxwoe")
+
 [connection signal="pressed" from="UIRightTop" to="UIRightTop" method="_on_pressed"]
+[connection signal="signal_translate" from="UIRightTop" to="." method="_on_ui_right_top_signal_translate"]
 [connection signal="pressed" from="UIRightTop/SettingsMenu/MainSettings/Option1Button" to="UIRightTop" method="_on_option_1_button_pressed"]
 [connection signal="pressed" from="UIRightTop/SettingsMenu/MainSettings/Option2Button" to="UIRightTop" method="_on_option_2_button_pressed"]
+[connection signal="pressed" from="UIRightTop/SettingsMenu/MainSettings/Option3Button" to="." method="_on_option_3_button_pressed"]
 [connection signal="pressed" from="UIRightTop/SettingsMenu/MainSettings/ButtonBack" to="UIRightTop" method="_on_button_back_pressed"]
 [connection signal="value_changed" from="UIRightTop/SettingsMenu/Option1/Volume" to="UIRightTop" method="_on_volume_value_changed"]
 [connection signal="pressed" from="UIRightTop/SettingsMenu/Option1/BackButton" to="UIRightTop" method="_on_back_button_pressed"]
 [connection signal="pressed" from="UIRightTop/SettingsMenu/Option2/EnglishButton" to="UIRightTop" method="_on_english_button_pressed"]
 [connection signal="pressed" from="UIRightTop/SettingsMenu/Option2/SpanishButton" to="UIRightTop" method="_on_spanish_button_pressed"]
 [connection signal="pressed" from="UIRightTop/SettingsMenu/Option2/BackButton" to="UIRightTop" method="_on_back_button_pressed"]
+[connection signal="pressed" from="Popup/ContinueButton" to="UIRightTop" method="_on_continue_button_pressed"]
+[connection signal="changeItem" from="ItemHolder" to="." method="_on_item_holder_change_item"]
+[connection signal="pressed" from="ItemHolder/useButton" to="." method="_on_use_button_pressed"]
+[connection signal="pressed" from="ItemHolder/Button1" to="ItemHolder" method="_on_button_1_pressed"]
+[connection signal="pressed" from="ItemHolder/Button2" to="ItemHolder" method="_on_button_2_pressed"]
+[connection signal="pressed" from="ItemHolder/Button3" to="ItemHolder" method="_on_button_3_pressed"]
+[connection signal="pressed" from="ItemHolder/Button4" to="ItemHolder" method="_on_button_4_pressed"]
+[connection signal="pressed" from="ItemHolder/Button5" to="ItemHolder" method="_on_button_5_pressed"]
+[connection signal="pressed" from="ItemHolder/Button6" to="ItemHolder" method="_on_button_6_pressed"]
