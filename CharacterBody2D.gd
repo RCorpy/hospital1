@@ -32,4 +32,4 @@ func _physics_process(delta):
 func get_animation(animation):
 	$AnimatedBody.animation = str(animation)
 	$AnimatedHat.animation = str(animation)
-	
+	$AnimatedClothes.animation = str(animation)
