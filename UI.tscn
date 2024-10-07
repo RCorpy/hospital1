@@ -402,6 +402,7 @@ texture = ExtResource("20_qbbic")
 
 [node name="SettingsMenu" type="Node2D" parent="UIRightTop"]
 unique_name_in_owner = true
+visible = false
 position = Vector2(-50.0836, 26.4177)
 scale = Vector2(0.159036, 0.159036)
 
@@ -799,6 +800,7 @@ theme_override_font_sizes/font_size = 21
 text = "Guardado correctamente"
 
 [node name="ItemHolder" type="Node2D" parent="."]
+visible = false
 position = Vector2(574, 554)
 scale = Vector2(2, 2.04)
 script = ExtResource("33_f72wj")
@@ -943,6 +945,7 @@ position = Vector2(-223.5, 3.43137)
 scale = Vector2(4.04, 4.04)
 texture = ExtResource("37_fxwoe")
 
+[connection signal="enablecontrols" from="UIRightTop" to="." method="_on_ui_right_top_enablecontrols"]
 [connection signal="pressed" from="UIRightTop" to="UIRightTop" method="_on_pressed"]
 [connection signal="signal_translate" from="UIRightTop" to="." method="_on_ui_right_top_signal_translate"]
 [connection signal="pressed" from="UIRightTop/SettingsMenu/MainSettings/Option1Button" to="UIRightTop" method="_on_option_1_button_pressed"]

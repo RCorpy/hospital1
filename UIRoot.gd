@@ -1,6 +1,7 @@
 extends Node2D
 
 signal save
+signal enableMovement(isTrue)
 var selectedItem = 1
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -30,3 +31,7 @@ func _on_use_button_pressed():
 
 func _on_item_holder_change_item(itemNumber):
 	selectedItem = itemNumber
+
+
+func _on_ui_right_top_enablecontrols(isTrue):
+	emit_signal("enableMovement", isTrue)

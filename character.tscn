@@ -1,6 +1,7 @@
-[gd_scene load_steps=122 format=3 uid="uid://dsdmgv03hrglj"]
+[gd_scene load_steps=124 format=3 uid="uid://dsdmgv03hrglj"]
 
 [ext_resource type="Texture2D" uid="uid://du273ngbnj2im" path="res://realassets/char/char_a_p1_0bas_humn_v01.png" id="1_0i74x"]
+[ext_resource type="Script" path="res://character.gd" id="1_37ual"]
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_ldgpp"]
 [ext_resource type="Texture2D" uid="uid://ub0xyjgrhklm" path="res://realassets/char/char_a_p1_5hat_pnty_v04.png" id="2_gh63e"]
 [ext_resource type="Texture2D" uid="uid://c17o0tvdxu7ay" path="res://realassets/char/char_a_p1_1out_alch_v01.png" id="4_6ivn3"]
@@ -962,7 +963,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b8u7k"]
+
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_37ual")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 scale = Vector2(3, 3)
@@ -989,4 +993,8 @@ sprite_frames = SubResource("SpriteFrames_s432g")
 animation = &"up_idle"
 autoplay = "down_idle"
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CapsuleShape2D_b8u7k")
+
+[connection signal="giveCharacterPosition" from="CharacterBody2D" to="." method="_on_character_body_2d_give_character_position"]
 [connection signal="ready" from="CharacterBody2D" to="CharacterBody2D" method="_on_ready"]
