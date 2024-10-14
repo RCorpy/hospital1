@@ -17,3 +17,11 @@ func _on_protagonist_give_char_position(charPos):
 	$Camera2D.global_position = charPos
 	$UI.global_position = charPos - Vector2(halfWidth, halfHeight)
 	
+
+
+func _on_bed_bed_entered(bedNumber):
+	$UI.showHealMenu(true)
+
+
+func _on_bed_bed_exited(bedNumber):
+	$UI.showHealMenu(false)

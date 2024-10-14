@@ -22,7 +22,6 @@ func updateBar(color, value):
 	for i in range(10):
 		combined_string = "%s%d" % [colorInitial, i+1]
 		if i*10 < value:
-			print(combined_string)
 			%progressbars.get_node(combined_string).visible = true
 		else:
 			%progressbars.get_node(combined_string).visible = false

@@ -35,3 +35,6 @@ func _on_item_holder_change_item(itemNumber):
 
 func _on_ui_right_top_enablecontrols(isTrue):
 	emit_signal("enableMovement", isTrue)
+
+func showHealMenu(show):
+	$ItemHolder.visible = show

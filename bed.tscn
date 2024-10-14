@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://okjcdsjja22y"]
+
+[ext_resource type="Texture2D" uid="uid://c5p4ttvf5hta1" path="res://realassets/tilesets/tilesets_fsm_rm2k3_para_vx_ace__set_hospital_by_milkian_darwnhe.png" id="1_2sdbx"]
+[ext_resource type="Script" path="res://bed.gd" id="1_5jxd0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ntdk2"]
+size = Vector2(63, 92)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mknwn"]
+size = Vector2(126, 155)
+
+[node name="Bed" type="StaticBody2D"]
+position = Vector2(969, 139)
+script = ExtResource("1_5jxd0")
+
+[node name="BedSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_2sdbx")
+region_enabled = true
+region_rect = Rect2(33.3999, -0.400028, 63.8, 94.6)
+
+[node name="BedCollision" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_ntdk2")
+
+[node name="AreaBed" type="Area2D" parent="."]
+
+[node name="AreaBedCollision" type="CollisionShape2D" parent="AreaBed"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_mknwn")
+
+[connection signal="body_entered" from="AreaBed" to="." method="_on_area_bed_body_entered"]
+[connection signal="body_exited" from="AreaBed" to="." method="_on_area_bed_body_exited"]
