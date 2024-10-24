@@ -1,42 +1,47 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
+
+const SPEED = 100.0
 var targetVector = Vector2(0,0)
 var facing = "down"
 var frame_size = Vector2(64, 64)
-
-signal giveCharacterPosition(charPosition)
+var has_reached_bed = false
+var has_reached_y_pos = false
 
 func _physics_process(delta):
 	
-	if $"..".isPlayerMovementEnabled:
-		if velocity.length()<0.01:
-			get_animation(facing+"_idle")
-		else:
-			get_animation(facing)
-		# Get the input direction and handle the movement/deceleration.
-		# As good practice, you should replace UI actions with custom gameplay actions.
-		var direction = Input.is_action_pressed("click")
-		if direction:
-			targetVector = get_local_mouse_position()
-			if targetVector.length()>10:
-				velocity = targetVector.normalized() * SPEED
-				if abs(velocity.x) > abs(velocity.y):
-					if velocity.x>0: facing = "right"
-					else: facing = "left"
-				else:
-					if velocity.y<0: facing= "up"
-					else: facing="down"
-			else:
-				velocity = Vector2(0,0)
-		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
-			velocity.y = move_toward(velocity.y, 0, SPEED)
-		move_and_slide()
-		emit_signal("giveCharacterPosition", global_position)
-	else:
+	if velocity.length()<0.01:
 		get_animation(facing+"_idle")
+	else:
+		get_animation(facing)
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+
+	targetVector = $"..".get_bed_position() - global_position
+	print(targetVector)
+	if targetVector.abs().y>10:
+		velocity = Vector2(0, get_abs_direction(targetVector.y)) * SPEED
+	elif targetVector.abs().x>10:
+		velocity = Vector2(get_abs_direction(targetVector.x), 0) * SPEED
+
+	else:
+		velocity = Vector2(0,0)
+	if abs(velocity.x) > abs(velocity.y):
+		if velocity.x>0: facing = "right"
+		else: facing = "left"
+	else:
+		if velocity.y<0: facing= "up"
+		else: facing="down"
 	
+
+	move_and_slide()
+	emit_signal("giveCharacterPosition", global_position)
+	
+	
+func get_abs_direction(number):
+	if number >0:
+		return 1
+	return -1
 
 func get_animation(animation):
 	#print(animation)
@@ -107,7 +112,8 @@ func load_one_animation(animated_sprite, this_res_path):
 	], this_res_path)
 	# Assign the SpriteFrames resource to the AnimatedSprite2D node
 	animated_sprite.frames = sprite_frames
-	animated_sprite.play("left")
+	print("playing down_idle")
+	animated_sprite.play("down_idle")
 	
 	print("at", animated_sprite)
 
@@ -121,6 +127,9 @@ func load_animation(sprite_frames, name, regions, res_path):
 		atlas_texture.region = region
 		sprite_frames.add_frame(name, atlas_texture)
 
-func _on_ready():
+func _on_patient_ready():
 	load_all_animations()
 
+
+func _on_area_2d_body_entered(body):
+	pass # Replace with function body.

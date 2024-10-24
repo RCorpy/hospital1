@@ -1,0 +1,55 @@
+[gd_scene load_steps=10 format=3 uid="uid://dv1rhky61ihs2"]
+
+[ext_resource type="Script" path="res://patient.gd" id="1_knw1s"]
+[ext_resource type="Texture2D" uid="uid://du273ngbnj2im" path="res://realassets/char/char_a_p1_0bas_humn_v01.png" id="1_o5psc"]
+[ext_resource type="Script" path="res://Miguel.gd" id="1_ubtg0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8j66b"]
+atlas = ExtResource("1_o5psc")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gisye"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8j66b")
+}],
+"loop": true,
+"name": &"down_idle",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rf08m"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x4yb6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fwycx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lbbr0"]
+radius = 8.0
+height = 24.0
+
+[node name="Patient" type="Node2D"]
+script = ExtResource("1_knw1s")
+
+[node name="Miguel" type="CharacterBody2D" parent="."]
+script = ExtResource("1_ubtg0")
+
+[node name="AnimatedBody" type="AnimatedSprite2D" parent="Miguel"]
+sprite_frames = SubResource("SpriteFrames_gisye")
+animation = &"down_idle"
+autoplay = "down_idle"
+
+[node name="AnimatedClothes" type="AnimatedSprite2D" parent="Miguel"]
+sprite_frames = SubResource("SpriteFrames_rf08m")
+
+[node name="AnimatedHair" type="AnimatedSprite2D" parent="Miguel"]
+sprite_frames = SubResource("SpriteFrames_x4yb6")
+
+[node name="AnimatedHat" type="AnimatedSprite2D" parent="Miguel"]
+sprite_frames = SubResource("SpriteFrames_fwycx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Miguel"]
+shape = SubResource("CapsuleShape2D_lbbr0")
+
+[connection signal="ready" from="." to="Miguel" method="_on_patient_ready"]
