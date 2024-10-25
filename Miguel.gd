@@ -18,7 +18,7 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 
 	targetVector = $"..".get_bed_position() - global_position
-	print(targetVector)
+	
 	if targetVector.abs().y>10:
 		velocity = Vector2(0, get_abs_direction(targetVector.y)) * SPEED
 	elif targetVector.abs().x>10:

@@ -109,8 +109,20 @@ func load_one_animation(animated_sprite, this_res_path):
 	animated_sprite.frames = sprite_frames
 	animated_sprite.play("left")
 	
-	print("at", animated_sprite)
-
+	load_animation(sprite_frames, "lay", [
+		Rect2(Vector2(0, 384), frame_size),
+		Rect2(Vector2(64, 384), frame_size),
+		Rect2(Vector2(128, 384), frame_size),
+		Rect2(Vector2(192, 384), frame_size),
+		Rect2(Vector2(256, 384), frame_size),
+		Rect2(Vector2(320, 384), frame_size),
+	],this_res_path) # remove this to swap for the next line 
+	#get_secondary_sprite_sheet(this_res_path))
+	get_secondary_sprite_sheet(this_res_path)
+	
+func get_secondary_sprite_sheet(path):
+	print(path.replace("_p1_", "_p4_"))
+	
 func load_animation(sprite_frames, name, regions, res_path):
 	var sprite_sheet = load(res_path)
 
