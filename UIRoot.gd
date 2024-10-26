@@ -2,6 +2,7 @@ extends Node2D
 
 signal save
 signal enableMovement(isTrue)
+signal heal_patient(treatment)
 var selectedItem = 1
 
 # Called when the node enters the scene tree for the first time.
@@ -26,9 +27,8 @@ func _on_ui_right_top_signal_translate():
 
 
 func _on_use_button_pressed():
-	print("used")
-	print(selectedItem)
-
+	emit_signal("heal_patient", selectedItem)
+	#use patient function for the bed that root currently_touching is saying
 
 func _on_item_holder_change_item(itemNumber):
 	selectedItem = itemNumber

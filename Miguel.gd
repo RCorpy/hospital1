@@ -5,8 +5,8 @@ const SPEED = 100.0
 var targetVector = Vector2(0,0)
 var facing = "down"
 var frame_size = Vector2(64, 64)
-var has_reached_bed = false
-var has_reached_y_pos = false
+
+var bed_position = Vector2(0,0)
 
 func _physics_process(delta):
 	
@@ -17,7 +17,7 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 
-	targetVector = $"..".get_bed_position() - global_position
+	targetVector = bed_position - global_position
 	
 	if targetVector.abs().y>10:
 		velocity = Vector2(0, get_abs_direction(targetVector.y)) * SPEED
@@ -129,6 +129,7 @@ func load_animation(sprite_frames, name, regions, res_path):
 
 func _on_patient_ready():
 	load_all_animations()
+	bed_position = $"..".get_bed_position()
 
 
 func _on_area_2d_body_entered(body):

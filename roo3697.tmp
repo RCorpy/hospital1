@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://bcdwjj6hv3x4b"]
+[gd_scene load_steps=12 format=3 uid="uid://bcdwjj6hv3x4b"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_g8oib"]
 [ext_resource type="PackedScene" uid="uid://dsdmgv03hrglj" path="res://character.tscn" id="1_sh6sf"]
 [ext_resource type="Texture2D" uid="uid://chnrmj8iyj38j" path="res://realassets/tilesets/Room_Builder_free_32x32.png" id="2_vi0s1"]
 [ext_resource type="Texture2D" uid="uid://d4bm32iy2qjim" path="res://realassets/tilesets/Tileset_32x32_2 with columns.png" id="3_0jcpw"]
 [ext_resource type="PackedScene" uid="uid://frj1f8qfogdc" path="res://UI.tscn" id="3_nhevp"]
+[ext_resource type="PackedScene" uid="uid://dv1rhky61ihs2" path="res://patient.tscn" id="7_mhakd"]
 [ext_resource type="PackedScene" uid="uid://okjcdsjja22y" path="res://bed.tscn" id="7_wxysk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4tjtc"]
@@ -1222,6 +1223,9 @@ position = Vector2(1016, 147)
 
 [node name="Bed2" parent="." instance=ExtResource("7_wxysk")]
 position = Vector2(1014, 358)
+
+[node name="Patient" parent="." instance=ExtResource("7_mhakd")]
+position = Vector2(572, 416)
 
 [connection signal="giveCharPosition" from="Protagonist" to="." method="_on_protagonist_give_char_position"]
 [connection signal="enableMovement" from="UI" to="Protagonist" method="_on_ui_enable_movement"]
