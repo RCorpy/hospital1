@@ -39,3 +39,10 @@ func _on_ui_right_top_enablecontrols(isTrue):
 
 func showHealMenu(show):
 	$ItemHolder.visible = show
+
+func updateRedBar(health):
+	$UILeftTop.updateBar("red", health)
+
+func update_stats(player_money, player_exp):
+	$UILeftTop/MoneyLabel.text = str(player_money)
+	$UILeftTop/ExpLabel.text = str(player_exp)

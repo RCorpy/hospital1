@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
+enum Patient_state {ENTERING, ONBED, EXITING}
+@export var patient_status: Patient_state = Patient_state.ENTERING
 
+const EXIT_VECTOR = Vector2(0,-200) #make it more outside than the exit door
 const SPEED = 100.0
 var targetVector = Vector2(0,0)
 var facing = "down"
@@ -8,34 +11,46 @@ var frame_size = Vector2(64, 64)
 
 var bed_position = Vector2(0,0)
 
+signal rewards
+
 func _physics_process(delta):
-	
-	if velocity.length()<0.01:
-		get_animation(facing+"_idle")
-	else:
-		get_animation(facing)
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+	if not patient_status == Patient_state.ONBED:
+		if velocity.length()<0.01:
+			get_animation(facing+"_idle")
+		else:
+			get_animation(facing)
+		# Get the input direction and handle the movement/deceleration.
+		# As good practice, you should replace UI actions with custom gameplay actions.
+		if patient_status == Patient_state.ENTERING:
+			targetVector = bed_position - global_position
+			if targetVector.abs().y>10:
+				velocity = Vector2(0, get_abs_direction(targetVector.y)) * SPEED
+			elif targetVector.abs().x>10:
+				velocity = Vector2(get_abs_direction(targetVector.x), 0) * SPEED
+			else:
+				velocity = Vector2(0,0)
+				
+		elif patient_status == Patient_state.EXITING:
+			targetVector = EXIT_VECTOR - global_position  #CHANGE THIS VECTOR TO EXIT
+			if targetVector.abs().x>10:
+				velocity = Vector2(get_abs_direction(targetVector.x), 0) * SPEED
+			elif targetVector.abs().y>10:
+				velocity = Vector2(0, get_abs_direction(targetVector.y)) * SPEED
+			else:
+				#REWARD TIME
+				emit_signal("rewards")
+				queue_free()
+			
+		if abs(velocity.x) > abs(velocity.y):
+			if velocity.x>0: facing = "right"
+			else: facing = "left"
+		else:
+			if velocity.y<0: facing= "up"
+			else: facing="down"
+		
 
-	targetVector = bed_position - global_position
-	
-	if targetVector.abs().y>10:
-		velocity = Vector2(0, get_abs_direction(targetVector.y)) * SPEED
-	elif targetVector.abs().x>10:
-		velocity = Vector2(get_abs_direction(targetVector.x), 0) * SPEED
-
-	else:
-		velocity = Vector2(0,0)
-	if abs(velocity.x) > abs(velocity.y):
-		if velocity.x>0: facing = "right"
-		else: facing = "left"
-	else:
-		if velocity.y<0: facing= "up"
-		else: facing="down"
-	
-
-	move_and_slide()
-	emit_signal("giveCharacterPosition", global_position)
+		move_and_slide()
+		#emit_signal("giveCharacterPosition", global_position)
 	
 	
 func get_abs_direction(number):
