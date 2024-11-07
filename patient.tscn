@@ -1,8 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dv1rhky61ihs2"]
+[gd_scene load_steps=14 format=3 uid="uid://dv1rhky61ihs2"]
 
 [ext_resource type="Script" path="res://patient.gd" id="1_knw1s"]
 [ext_resource type="Texture2D" uid="uid://du273ngbnj2im" path="res://realassets/char/char_a_p1_0bas_humn_v01.png" id="1_o5psc"]
 [ext_resource type="Script" path="res://Miguel.gd" id="1_ubtg0"]
+[ext_resource type="Texture2D" uid="uid://dgxyn2ff0e3o8" path="res://realassets/popup/popuppaper.png" id="4_7d6jg"]
+[ext_resource type="Texture2D" uid="uid://bbgw61sni6deu" path="res://realassets/illnesses/wound.png" id="5_jna7w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8j66b"]
 atlas = ExtResource("1_o5psc")
@@ -33,6 +35,17 @@ height = 24.0
 radius = 21.0
 height = 52.0
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_i4j6w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_jna7w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Patient" type="Node2D"]
 script = ExtResource("1_knw1s")
 
@@ -61,6 +74,17 @@ shape = SubResource("CapsuleShape2D_lbbr0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Miguel/Area2D"]
 shape = SubResource("CapsuleShape2D_27bkt")
+
+[node name="StatusHolder" type="Sprite2D" parent="Miguel"]
+visible = false
+position = Vector2(24, -26)
+scale = Vector2(0.138393, 0.125)
+texture = ExtResource("4_7d6jg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Miguel/StatusHolder"]
+position = Vector2(7.62939e-06, -4.76837e-06)
+scale = Vector2(0.264113, 0.28125)
+sprite_frames = SubResource("SpriteFrames_i4j6w")
 
 [connection signal="ready" from="." to="Miguel" method="_on_patient_ready"]
 [connection signal="rewards" from="Miguel" to="." method="_on_miguel_rewards"]

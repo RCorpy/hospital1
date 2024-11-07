@@ -25,12 +25,17 @@ func _physics_process(delta):
 			targetVector = bed_position - global_position
 			if targetVector.abs().y>10:
 				velocity = Vector2(0, get_abs_direction(targetVector.y)) * SPEED
-			elif targetVector.abs().x>10:
+			elif targetVector.abs().x>50:
 				velocity = Vector2(get_abs_direction(targetVector.x), 0) * SPEED
 			else:
 				velocity = Vector2(0,0)
+				patient_status = Patient_state.ONBED
+				$StatusHolder.visible = true
+				#We can animate to sleep position and to allow treatment
+				get_animation(facing+"_idle")
 				
 		elif patient_status == Patient_state.EXITING:
+			$StatusHolder.visible = false #could be optimized 
 			targetVector = EXIT_VECTOR - global_position  #CHANGE THIS VECTOR TO EXIT
 			if targetVector.abs().x>10:
 				velocity = Vector2(get_abs_direction(targetVector.x), 0) * SPEED
@@ -51,6 +56,9 @@ func _physics_process(delta):
 
 		move_and_slide()
 		#emit_signal("giveCharacterPosition", global_position)
+	else:
+		pass
+		#print("ONBED")
 	
 	
 func get_abs_direction(number):
